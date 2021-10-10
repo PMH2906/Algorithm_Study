@@ -1,5 +1,4 @@
-#pypy3으로!!!
-
+#pypy3로 설정하여야 됨
 import sys
 input = sys.stdin.readline
 r, c = map(int, input().split())
