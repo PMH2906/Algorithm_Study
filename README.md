@@ -25,3 +25,29 @@
   함수는 여러 개의 순회 가능한(iterable) 객체를 인자로 받고, 각 객체가 담고 있는 원소를 터플의 형태로 차례로 접근할 수 있는 반복자(iterator)를 반환
     for p1, p2 in zip(phone_book, phone_book[1:])
     ==> (phone_book[0], phone_book[1]) (phone_book[1], phone_book[2])...
+  
+  
+  * permutations(from itertools import permutations)
+    permutations를 이용해서 모든 경우의 수를 만들고 판정.
+    permutations(iterable, r=None) : iterable요소의 길이r에 해당하는 순열 생성
+    ex)프로그래머스-소수찾기
+    
+  * set함수
+    중복되는 수가 발생시 삭제
+    set(리스트)
+    ex)프로그래머스-소수찾기
+   
+  * map
+    map은 리스트의 요소를 지정된 함수로 처리해주는 함수
+    map(함수, iterable)
+    ex)프로그래머스-소수찾기
+    
+   * join 
+     리스트를 구분자로 합쳐줌
+     '구분자'.join함수(리스트)
+     ex)프로그래머스-소수찾기
+     
+   * sort(key - lambda x : x값 처리, reverse = True)
+     ex)프로그래머스-
+    
+   
