@@ -13,6 +13,6 @@ def solution(n, computers):
             if visited[i] == False and computers[i][j]==1:
                 bfs(i,n,computers)
                 answer+=1
-    
-    
+  
     return answer
+
