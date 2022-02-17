@@ -16,3 +16,30 @@ def solution(n, computers):
   
     return answer
 
+
+'''
+from collections import deque
+def solution(n, computers):
+    answer = 0
+    visited = [0 for _ in range(n)]
+    def bfs(node):
+        q = deque()
+        q.append(node)
+        
+        while q:
+            node = q.popleft()
+            for i in range(n):
+                if computers[node][i] == 1 and node != i:
+                    computers[node][i]=0
+                    visited[i] = 1
+                    q.append(i)
+                    
+    for i in range(n):
+        if visited[i] == 0:
+            visited[i]=1
+            bfs(i)
+            answer+=1
+        
+    return answer
+    '''
+
