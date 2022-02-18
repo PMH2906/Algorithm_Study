@@ -51,9 +51,13 @@
      ex)프로그래머스-가장 큰 수
      
    * from collections import defaultdict
+   
      routes = defaultdict(list)
+     
      routes[ticket[0]].append(ticket[1])
+     
      routes[ticket[0]].append(ticket[2])
+     
      =>{'ticket[0]' : [ticket[1], ticket[2]
      ex)프로그래머스 - 여행경로
     
