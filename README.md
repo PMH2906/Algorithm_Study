@@ -47,7 +47,7 @@
      '구분자'.join함수(리스트)
      ex)프로그래머스-소수찾기
      
-   * sort(key - lambda x : x값 처리, reverse = True)
+   * sort(key = lambda x : x값 처리, reverse = True)
      ex)프로그래머스-가장 큰 수
      
    * from collections import defaultdict
