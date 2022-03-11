@@ -7,7 +7,7 @@ while True:
     ops.append(matchs[op])
     op=matchs[op]
     if op == -1: break
-
+#최악의 경우 O(n)
 count=0
 
 while True:
@@ -22,4 +22,5 @@ while True:
         break
     #해당 경기에서도 이겨야하므로 +1을 해주었음
 print(count+1)
-
+#o(n제곱)
+#더 효율적으로 할 수 있는 방법
