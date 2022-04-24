@@ -3,7 +3,7 @@ n =int(input())
 k = int(input())
 
 udlr = [(-1,0),(1,0),(0,-1),(0,1)] #상하좌우
-dl = ((3,2),(2,3),(0,1),(1,0)) #상하좌우를 볼때, 오른쪽 왼쪽 방향
+dl = ((3,2),(2,3),(0,1),(1,0)) #상하좌우를 볼때, 오른쪽 왼쪽 방향(해당 방향에서 오,왼 방향키인덱스 번호임)
 nx, ny =0,0
 maps = [[False]*n for _ in range(n)] 
 maps[nx][ny] = True
@@ -53,9 +53,6 @@ for i in range(l):
             tail.append((nx,ny))
             x,y=nx,ny
 
-        
-
-    
 
 
 
