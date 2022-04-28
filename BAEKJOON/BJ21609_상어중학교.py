@@ -59,6 +59,14 @@ def gravity(grid):
     return grid
 
 #90도 회전: 행-> 열, 열->행이 되지만 각 행과 열이 reverse로 삽입되어야함
+# grid_rotate_90=list(zip(*grid))[::-1]
+# 행 -> 열, 열->행으로 바꾼후 행의 위치를 역순으로! 하면 90도 회전임
+# original : [1 2 3][4 5 6][7 8 9] 
+# 역 : [1 4 7] [2 5 8] [3 6 9] 즉 역행렬의 행만 reverse하면 90도 회전이랑 같음
+# 90도 회전 : [3 6 9][2 5 8][1 4 7]
+# 튜플을 리스트로 
+# grid_rotate_90 = [list(row) for row in grid_rotate_90]
+
 def lotate_90(grid):
     n_new = []
     for g in grid:
