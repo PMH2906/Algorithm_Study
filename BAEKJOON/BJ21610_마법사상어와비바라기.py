@@ -1,8 +1,15 @@
 from _collections import deque
+
+# queue = deque([])
+# queue.append((1,2))
+# queue.append((3,4))
+# print(queue) #([(1, 2), (3, 4)])
+
 n, m = map(int, input().split())
 
 maps = [list(map(int,input().split())) for _ in range(n)]
 move = deque([list(map(int,input().split())) for _ in range(m)])
+# print(move) #deque([[1, 3], [3, 4], [8, 1], [4, 8]])
 
 rain_location = deque([(n-2,0),(n-2,1),(n-1,0),(n-1,1)])
 dir = [(0,-1),(-1,-1),(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1)]

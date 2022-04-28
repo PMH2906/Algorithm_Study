@@ -39,7 +39,8 @@ def next_dice_list(dir,dice_dir,dice):
 
 def next_dir(dir,clock_dir):
     # 한줄로
-    # dir = (dir+clock_dir)%4 # 4로 나누면 나머지는 0,1,2,3이므로
+    # dir = (dir+clock_dir)%4 # 4로 나누면 나머지는 0,1,2,3이므로(시계방향)
+    # 반시계 dir += clock_dir if d==-1 : d=3
     dir+=clock_dir
     if dir>3:
         dir=0
