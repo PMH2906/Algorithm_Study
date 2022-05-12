@@ -16,10 +16,23 @@ def check(n):
 # '구분자'.join함수(리스트)
 def solution(numbers):
     answer=[]
+    # for i in range(1,len(numbers)+1):
+    #     perlist = list(map(''.join, permutations(list(numbers),i)))
+    #     for j in list(set(perlist)):
+    #         if check(int(j)):
+    #             answer.append(int(j))
+
     for i in range(1,len(numbers)+1):
-        perlist = list(map(''.join, permutations(list(numbers),i)))
-        for j in list(set(perlist)):
-            if check(int(j)):
-                answer.append(int(j))
+        for per in permutations(list(numbers),i):
+            # print(per)
+            perlist =''.join(per)
+            
+            if check(int(perlist)):
+                answer.append(int(perlist))
+
+
     answer = len(set(answer))
     return answer
+
+# print(solution("17"))
+

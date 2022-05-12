@@ -11,3 +11,4 @@ def solution(numbers):
     #int로 변환한 뒤, str로 변환하는 이유는 "000"을 "0"으로 처리하기 위해
     return str(int(''.join(numbers)))
 print(solution([3, 30, 34, 5, 9]))
+
