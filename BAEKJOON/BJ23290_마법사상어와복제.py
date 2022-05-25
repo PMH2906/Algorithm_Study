@@ -1,4 +1,4 @@
-from _collections import deque
+from collections import deque
 m ,s = int(input().split())
 grid = [[0,deque()] *4 for _ in range(4)] #물고기수 :0 방향:-1
 fish_info = [list(map(int,input().split())) for _ in range(m)] # 물고기 위치, dir
