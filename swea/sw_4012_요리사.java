@@ -1,5 +1,3 @@
-package s;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,13 +19,14 @@ public class sw_4012_요리사 {
 				if(!visited[i]) notChoosed[idx++]=i;
 			}
 			flavor(choosed, notChoosed);
-			cnt+=1;
+//			cnt+=1;
 			return;
 		}
 		for(int i=startIdx;i<N;i++) {
 			choosed[nth]=i;
 			visited[i]=true;
-			if(cnt<=up/down/2) select(nth+1,choosed,i+1,visited);
+//			if(cnt<=up/down/2) select(nth+1,choosed,i+1,visited);
+			select(nth+1,choosed,i+1,visited);
 			visited[i]=false;
 		}
 	}
@@ -64,7 +63,7 @@ public class sw_4012_요리사 {
 				tokens=new StringTokenizer(input.readLine());
 				for(int c=0;c<N;c++) power[r][c] = Integer.parseInt(tokens.nextToken());
 			}
-			select(0,new int[n],0, new boolean[N]);
+			select(0,new int[n],1, new boolean[N]); // 0을 포함했는지 여부에 따라서 두 개로 나뉘면서 시작되므로 이것을 이미 포함했다고 가정하면 다른 반대쪽은 탐색 안 함!! 중요!!1
 			output.append(String.format("#%d %d\n", test_case, result));
 		}
 		System.out.println(output);
