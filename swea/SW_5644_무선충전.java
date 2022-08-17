@@ -60,7 +60,7 @@ public class SW_5644_무선충전{
  			//int maxSum=Integer.MIN_VALUE;
  			for(int m=0;m<M+1;m++) {
  				int [] P=new int[3];
- 				for(int a=0;a<A;a++) {
+ 				for(int a=0;a<A;a++) { // 이때 배터리 성능이 큰 것 부터 나온다면 각각의 A, B의 충전기 선택 되면 종료되도록 하는 것도 방법!
  					checkA=distance(battery[a][0],battery[a][1],aP[0],aP[1],battery[a][2]);
  					checkB=distance(battery[a][0],battery[a][1],bP[0],bP[1],battery[a][2]);
  					if(checkA&&checkB) {
