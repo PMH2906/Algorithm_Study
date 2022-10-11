@@ -18,11 +18,14 @@ public class BJ_15961_회전초밥 {
 		K=Integer.parseInt(tokens.nextToken());
 		C=Integer.parseInt(tokens.nextToken());
 		
-		list=new int[N];
+		list=new int[N+K-1]; // 회전고려!
 		check = new int[D+1];
 		
 		for(int n=0;n<N;n++) {
 			list[n]=Integer.parseInt(input.readLine());
+		}
+		for(int n=0;n<K-1;n++) {
+			list[N+n]=list[n];
 		}
 		check[C]+=1;
 		for(int n=0;n<K;n++) {
@@ -32,7 +35,7 @@ public class BJ_15961_회전초밥 {
 		max_cnt = cnt;
 		int start = 0;
 		
-		for(int finish=K;finish<N;finish++) {
+		for(int finish=K;finish<list.length;finish++) {
 			
 			if(list[finish]!=list[start]) {
 				check[list[start]]-=1;
