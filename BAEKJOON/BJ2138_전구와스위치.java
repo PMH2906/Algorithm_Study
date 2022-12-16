@@ -1,6 +1,13 @@
 import java.util.*;
 import java.io.*;
 
+
+/**
+ * 그리디!! 앞에서부터 탐색하여 i-1 번째 전구를 현재 상태와 원하는 상태를 비교하며 탐색해나가는 과정!!  
+ * 현재 상태의 전구에서 첫번째 스위치를 안 킨 상태와 킨 상태(누른 횟수 증)로 두 개의 배열을 체크해야함
+ * 두 상태의 배열을 i = 1-N-1까지 탐색하면서 i-1 상태가 원하는 전구 상태와 다르다면 i번째 스위치를 누른다 -> 횟수 증가와 i-1,i,i+1전구 바꿔주기 , 같다면 pass
+ * 모두 탐색했다면, 두 상태의 배열의 N-1(마지막 칸)과 원하는 전구 상태의 N-1(마지막 칸)을 비교하여 같으면 누른 횟수 중 가장 작은 횟수로 바꿔주기  
+ * **/
 public class BJ2138_전구와스위치 {
 
 	static BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
