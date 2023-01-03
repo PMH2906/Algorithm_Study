@@ -108,7 +108,6 @@ public class BJ4991_로봇청소기 {
 			for (int s = 0; s < size; s++) { // 거리별 탐색
 				int[] now = q.poll();
 				if (now[0] == point[finish][0] && now[1] == point[finish][1]) {
-					System.out.println(move);
 					return move; // 거리 리턴 
 				}
 					
@@ -120,7 +119,7 @@ public class BJ4991_로봇청소기 {
 					if (nx < 0 || nx >= H || ny < 0 || ny >= W)
 						continue;
 
-					if (map[nx][ny] == '.' && !visited[nx][ny]) {
+					if (map[nx][ny] != 'x'&&!visited[nx][ny]) {
 						q.add(new int[] { nx, ny});
 						visited[nx][ny] = true;
 					}
