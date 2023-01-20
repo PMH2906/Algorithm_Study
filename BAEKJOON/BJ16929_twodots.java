@@ -1,9 +1,8 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
+// dfs탐색 => 첫번째 점 포함 4개 이상 방문하면서, 첫시작점과 인접하면 사이클 존재 
 public class BJ16929_twodots {
 	static BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer tokens;
@@ -27,7 +26,7 @@ public class BJ16929_twodots {
 		for (int r = 0; r < N; r++) {
 			for (int c = 0; c < M; c++) {
 				if (!visited[r][c]) {
-					visited[r][c]=true;
+					visited[r][c]=true; // 이미 사이클이 존재하지 않는 점은 더 이상 탐색하지 X => visited 리셋 X 
 					if (dfs(r, c, 1, r, c)) {
 						System.out.print("Yes");
 						return;
@@ -39,32 +38,8 @@ public class BJ16929_twodots {
 
 	}
 
-//    private static boolean bfs(int x, int y) {
-//        char color = map[x][y];
-//        Queue<int[]> q = new LinkedList<>();
-//        q.add(new int[]{x,y});
-//
-//        while(q.size()>0){
-//            int now[] = q.poll();
-//            if(now[0]==x&&now[1]==y) return true;
-//
-//            for(int d=0;d<deltas.length;d++){
-//                int nx = now[0]+deltas[d][0];
-//                int ny = now[1]+deltas[d][1];
-//
-//                if(nx<0||nx>=N||ny<0||ny>=M) continue;
-//
-//                if(!visited[nx][ny]&&map[nx][ny]==color){
-//                    q.add(new int[]{nx,ny});
-//                    visited[nx][ny]=true;
-//                }
-//            }
-//
-//        }
-//        return false;
-//    }
 	private static boolean dfs(int r, int c, int cnt, int sR, int sC) {
-//		System.out.println(r+" "+c+" "+sR+" "+sC+map[r][c]+" "+map[sR][sC]+" "+cnt);
+		// 점을 4개 이상 방문하면서, 시작점과 인접하면 사이클 존재 
 		if (cnt >= 4 && check(r, c, sR, sC)) {
 			return true;
 		}
@@ -79,9 +54,9 @@ public class BJ16929_twodots {
 			if (!visited[nx][ny] && map[nx][ny] == map[sR][sC]) {
 				visited[nx][ny]=true;
 				if(dfs(nx, ny, cnt + 1, sR, sC)) {
-					return true;
+					return true; // 이미 사이클 존재하므로 더 이상 탐색하지 X, 바로 리턴해주기 
 				};
-				visited[nx][ny]=false;
+				visited[nx][ny]=false; // 같은 알파벳이지만, 시작점이 다른 사이클도 탐색가능하도록 visited 돌려주기!!!! 
 			}
 
 		}
@@ -89,10 +64,10 @@ public class BJ16929_twodots {
 		return false;
 	}
 
+	// 체크할 점이 시작점의 동서남북 중 하나에 위치하면 사이클 생성! 
 	private static boolean check(int r, int c, int sR, int sC) {
 		for(int d=0;d<deltas.length;d++) {
-//			System.out.println(r+" "+c+" "+(sR+deltas[d][0])+" "+(sC+deltas[d][1]));
-			if(r==sR+deltas[d][0]&&c==sC+deltas[d][1]) return true;
+			if(r==sR+deltas[d][0]&&c==sC+deltas[d][1]) return true; 
 		}
 		
 		return false;
