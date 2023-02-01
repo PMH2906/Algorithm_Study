@@ -15,14 +15,9 @@ public class BJ1660_캡틴이다솜 {
 		dp1 = new int[N+1];
 		dp2 = new int[N+1];
 		
-		int len = 0;
 		for(int i=1;i<=N;i++) {
 			dp1[i] += dp1[i-1]+(i*(i+1))/2; // 정삼각형에 필요한 갯수 ex) 2 = (2*3/2)=3 
 			
-//			if(i>=N) {
-//				len = i;
-//				break;
-//			}
 		}
 		
 		Arrays.fill(dp2, Integer.MAX_VALUE);
