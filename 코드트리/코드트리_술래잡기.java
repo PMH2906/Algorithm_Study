@@ -132,6 +132,7 @@ public class 코드트리_술래잡기 {
 	}
 	
 	// 현재 위치에서 술래가 움직여야 할 방향. 즉 거리 3을 측정하는 방향 초기화  
+	// map 2개를 만들어서 시작방향, 돌아오는 방향의 dir 정보를 저장하는 방식도 있
 	private static void init() {
 		int dist = 0;
 		int dir = 0;
